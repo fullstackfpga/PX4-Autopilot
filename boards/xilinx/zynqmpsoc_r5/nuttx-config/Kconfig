@@ -1,0 +1,43 @@
+#
+# For a description of the syntax of this configuration file,
+# see the file kconfig-language.txt in the NuttX tools repository.
+#
+
+if ARCH_BOARD_ZYNQMPSOC_R5
+
+config BOARD_LOOPSPERMSEC
+	int
+	default 60000
+	depends on ARCH_BOARD_ZYNQMPSOC_R5
+
+config BOARD_FLASH_SIZE
+	int
+	default 2097152
+	depends on ARCH_BOARD_ZYNQMPSOC_R5
+
+config BOARD_BOOTLOADER_SIZE
+	int
+	default 0
+	depends on ARCH_BOARD_ZYNQMPSOC_R5
+
+config BOARD_FLASH_PAGE_SIZE
+	int
+	default 4096
+	depends on ARCH_BOARD_ZYNQMPSOC_R5
+
+config BOARD_FLASH_SECTOR_SIZE
+	int
+	default 4096
+	depends on ARCH_BOARD_ZYNQMPSOC_R5
+
+config BOARD_SRAM_SIZE
+	int
+	default 262144
+	depends on ARCH_BOARD_ZYNQMPSOC_R5
+
+config BOARD_SRAM_START
+	hex
+	default 0x00020000
+	depends on ARCH_BOARD_ZYNQMPSOC_R5
+
+endif

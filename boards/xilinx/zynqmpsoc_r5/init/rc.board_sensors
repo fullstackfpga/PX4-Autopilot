@@ -1,0 +1,108 @@
+#!/bin/sh
+#
+# Board sensor configuration for ZynqMP SoC R5
+#
+
+# Start GPS driver
+if param compare SYS_HAS_GPS 1
+then
+	gps start -d ${BOARD_SERIAL_GPS1} -s
+fi
+
+# Start secondary GPS if available
+if param compare SYS_HAS_GPS 2
+then
+	gps start -d ${BOARD_SERIAL_GPS2} -s -g 1
+fi
+
+# Start magnetometer if available
+if param compare SENS_EN_MAG 1
+then
+	# Start HMC5883 / QMC5883L
+	if hmc5883 -I -R 0 start
+	then
+		echo "HMC5883 started"
+	fi
+	
+	# Start IST8310
+	if ist8310 -I -R 0 start
+	then
+		echo "IST8310 started"
+	fi
+fi
+
+# Start barometer if available
+if param compare SENS_EN_BARO 1
+then
+	# Start MS5611 barometer
+	if ms5611 -I start
+	then
+		echo "MS5611 started"
+	fi
+fi
+
+# Start IMU sensors
+# Note: For ZynqMP R5, IMU sensors would typically be external
+# and connected via I2C or SPI
+
+# Start MPU6000/MPU6050 if available
+if mpu6000 -I -R 0 start
+then
+	echo "MPU6000 started"
+fi
+
+# Start ICM20689 if available
+if icm20689 -I -R 0 start
+then
+	echo "ICM20689 started"
+fi
+
+# Start BMI088 if available
+if bmi088 -I -A -R 0 start
+then
+	echo "BMI088 accel started"
+fi
+
+if bmi088 -I -G -R 0 start
+then
+	echo "BMI088 gyro started"
+fi
+
+# Start ADC driver if available
+if param compare SENS_EN_ADC 1
+then
+	adc start
+fi
+
+# Start differential pressure sensor if available
+if param compare SENS_EN_DPRES 1
+then
+	# Start MS4525DO
+	if ms4525_airspeed -I start
+	then
+		echo "MS4525DO started"
+	fi
+fi
+
+# Start optical flow sensor if available
+if param compare SENS_EN_FLOW 1
+then
+	# Start PX4Flow
+	if px4flow -I start
+	then
+		echo "PX4Flow started"
+	fi
+fi
+
+# Start distance sensor if available
+if param compare SENS_EN_DIST 1
+then
+	# Start VL53L0X
+	if vl53l0x -I start
+	then
+		echo "VL53L0X started"
+	fi
+fi
+
+# Start RC input driver
+rc_input start

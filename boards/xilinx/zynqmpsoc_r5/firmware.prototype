@@ -1,0 +1,13 @@
+{
+    "board_id": 2005,
+    "magic": "PX4FWv1",
+    "description": "Firmware for the Xilinx ZynqMP SoC R5 board",
+    "image": "",
+    "build_time": 0,
+    "summary": "ZYNQMPSOC_R5",
+    "version": "0.0.0",
+    "image_size": 0,
+    "image_maxsize": 2097152,
+    "git_identity": "",
+    "board_revision": 0
+}

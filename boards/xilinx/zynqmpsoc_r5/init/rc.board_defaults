@@ -1,0 +1,73 @@
+#!/bin/sh
+#
+# Board defaults for ZynqMP SoC R5
+#
+
+# System configuration
+param set-default SYS_AUTOSTART 4001
+param set-default SYS_AUTOCONFIG 1
+
+# MAVLink configuration
+param set-default MAV_TYPE 2
+param set-default MAV_SYS_ID 1
+param set-default MAV_COMP_ID 1
+
+# Serial port configuration
+param set-default SER_GPS1_BAUD 38400
+param set-default SER_GPS2_BAUD 38400
+param set-default SER_TEL1_BAUD 57600
+param set-default SER_TEL2_BAUD 57600
+param set-default SER_TEL3_BAUD 57600
+param set-default SER_RC_BAUD 100000
+
+# RC configuration
+param set-default RC_CHAN_CNT 16
+param set-default RC_INPUT_PROTO 1
+
+# PWM configuration
+param set-default PWM_MAIN_FUNC1 101
+param set-default PWM_MAIN_FUNC2 102
+param set-default PWM_MAIN_FUNC3 103
+param set-default PWM_MAIN_FUNC4 104
+param set-default PWM_MAIN_FUNC5 105
+param set-default PWM_MAIN_FUNC6 106
+param set-default PWM_MAIN_FUNC7 107
+param set-default PWM_MAIN_FUNC8 108
+
+# Control allocation
+param set-default CA_AIRFRAME 0
+param set-default CA_METHOD 1
+
+# Logger configuration
+param set-default SDLOG_DIRS_MAX 3
+param set-default SDLOG_PROFILE 5
+
+# EKF2 configuration
+param set-default EKF2_PREDICT_US 10000
+param set-default EKF2_GPS_DELAY 110
+param set-default EKF2_MAG_DELAY 0
+param set-default EKF2_BARO_DELAY 0
+
+# Navigator configuration
+param set-default NAV_ACC_RAD 10.0
+param set-default NAV_DLL_ACT 2
+
+# Commander configuration
+param set-default COM_DISARM_LAND 0.1
+param set-default COM_DISARM_PRFLT 10.0
+
+# Battery configuration
+param set-default BAT1_CAPACITY 2200
+param set-default BAT1_V_DIV 10.14
+param set-default BAT1_A_PER_V 36.367
+
+# Thermal configuration
+param set-default SENS_EN_THERMAL 0
+
+# Disable unused sensors
+param set-default SENS_EN_BARO 0
+param set-default SENS_EN_MAG 0
+param set-default SENS_EN_GPS 1
+
+# Set default mixer
+param set-default SYS_USE_IO 0
