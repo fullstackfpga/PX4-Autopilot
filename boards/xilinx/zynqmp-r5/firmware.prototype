@@ -1,0 +1,13 @@
+{
+    "board_id": 2000,
+    "magic": "ZYNQMP-R5",
+    "description": "Firmware for the Xilinx ZynqMP R5 board",
+    "image": "",
+    "build_time": 0,
+    "summary": "ZynqMP-R5",
+    "version": "0.1",
+    "image_size": 0,
+    "image_maxsize": 8388608,
+    "git_identity": "",
+    "board_revision": 0
+}
